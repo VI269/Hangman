@@ -31,6 +31,7 @@ def main():
         clearConsole()
         word = choose_the_word()
         while True:
+            halfcorrect = 0
             guess = get_guess(len(word))
             clearConsole()
             correct = 0
@@ -42,6 +43,7 @@ def main():
                             display(f"{Fore.GREEN}{glet.upper()}")
                         else:
                             display(f"{Fore.YELLOW}{glet.upper()}")
+                            halfcorrect += 1
                     else:
                         display(f"{Fore.RED}{glet.upper()}")
                 wait()
@@ -56,8 +58,13 @@ def main():
                     wait()
                     clearConsole()
                     continue
-                else:
+                elif halfcorrect == 0:
                     display(f"{Fore.YELLOW}Some Correct.")
+                    wait()
+                    clearConsole()
+                    continue
+                else:
+                    display(f"{Fore.GREEN}Some Correct.")
                     wait()
                     clearConsole()
                     continue
