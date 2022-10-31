@@ -65,7 +65,7 @@ def main():
                 display("Wrong # of letters.")
                 wait()
                 clearConsole()
-                break
+                continue
 
 if __name__ == '__main__':
     main()
